@@ -1,6 +1,10 @@
+import Booklist from "../components/Booklist";
+
 const Home = () => {
   return (
-    <div>Home</div>
-  )
-}
-export default Home
+    <>
+      <Booklist />
+    </>
+  );
+};
+export default Home;
