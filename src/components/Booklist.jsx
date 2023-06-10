@@ -7,7 +7,17 @@ const Booklist = () => {
 
   return (
     <div>
-      {booklist.map((book) => <SingleBook key={book.id} setBookList={setBookList} book={book} />)}
+      {booklist.map((book) => {
+        const { title, author } = book;
+        return (
+          <SingleBook
+            key={book.id}
+            setBookList={setBookList}
+            title={title}
+            author={author}
+          />
+        );
+      })}
     </div>
   );
 };

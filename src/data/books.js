@@ -1,21 +1,21 @@
 const books = [
   {
     id: 1,
-    title: 'book1',
+    title: 'book-1',
     category: 'fiction',
     author: 'martins',
   },
   {
     id: 2,
-    title: 'book2',
+    title: 'book-2',
     category: 'fiction',
-    author: 'martins',
+    author: 'John',
   },
   {
     id: 3,
-    title: 'book3',
+    title: 'book-3',
     category: 'fiction',
-    author: 'martins',
+    author: 'Doe',
   },
 ];
 
