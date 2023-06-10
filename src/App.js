@@ -1,20 +1,24 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {
+  createBrowserRouter,
+  Route,
+  createRoutesFromElements,
+  RouterProvider,
+} from "react-router-dom";
 import Home from "./pages/Home";
 import Categories from "./pages/Categories";
-import Navbar from "./components/Navbar";
+import RootLayout from "./layouts/RootLayout";
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<RootLayout />}>
+      <Route index element={<Home />}></Route>
+      <Route path="categories" element={<Categories />}></Route>
+    </Route>
+  )
+);
 
 const App = () => {
-  return (
-    <BrowserRouter>
-      <Navbar />
-      <main>
-        <Routes>
-          <Route index element={<Home />}></Route>
-          <Route path="categories" element={<Categories />}></Route>
-        </Routes>
-      </main>
-    </BrowserRouter>
-  );
+  return <RouterProvider router={router} />;
 };
 
 export default App;
