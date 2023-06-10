@@ -1,16 +1,14 @@
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
-const SingleBook = ({ title }) => {
-  return (
-    <div>
-      <p>{title}</p>
-      <button>delete</button>
-    </div>
-  );
-};
+const SingleBook = ({ title }) => (
+  <div>
+    <p>{title}</p>
+    <button type="button">delete</button>
+  </div>
+);
 
 export default SingleBook;
 
-SingleBook.PropTypes = {
+SingleBook.propTypes = {
   title: PropTypes.string.isRequired,
 };
