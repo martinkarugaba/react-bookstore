@@ -1,29 +1,13 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { addBookToList } from '../redux/books/booksSlice';
+import AddBookButton from './AddBookButton';
 
 const AddBookForm = () => {
-  const dispatch = useDispatch();
-
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const book = {
-      itemId: String(Date.now()),
-      title,
-      author,
-      category: 'uncategorized',
-    };
-    dispatch(addBookToList(book));
-    setTitle('');
-    setAuthor('');
-  };
-
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form>
         <input
           type="text"
           value={title}
@@ -38,7 +22,12 @@ const AddBookForm = () => {
           onChange={(e) => setAuthor(e.target.value)}
           placeholder="Author"
         />
-        <button type="submit">Submit</button>
+        <AddBookButton
+          author={author}
+          title={title}
+          setAuthor={setAuthor}
+          setTitle={setTitle}
+        />
       </form>
     </>
   );
