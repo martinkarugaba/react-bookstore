@@ -5,18 +5,20 @@ import { addBookToList } from '../redux/books/booksSlice';
 const AddBookForm = () => {
   const dispatch = useDispatch();
 
-  const [title, setBook] = useState('');
+  const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const book = {
-      id: Date.now(),
+      itemId: String(Date.now()),
       title,
       author,
       category: 'uncategorized',
     };
     dispatch(addBookToList(book));
+    setTitle('');
+    setAuthor('');
   };
 
   return (
@@ -25,12 +27,14 @@ const AddBookForm = () => {
         <input
           type="text"
           value={title}
-          onChange={(e) => setBook(e.target.value)}
+          required
+          onChange={(e) => setTitle(e.target.value)}
           placeholder="Add book"
         />
         <input
           type="text"
           value={author}
+          required
           onChange={(e) => setAuthor(e.target.value)}
           placeholder="Author"
         />

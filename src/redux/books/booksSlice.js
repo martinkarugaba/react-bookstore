@@ -11,10 +11,10 @@ export const booksSlice = createSlice({
   reducers: {
     addBookToList: (state, action) => {
       const {
-        id, title, author, category,
+        itemId, title, author, category,
       } = action.payload;
       const book = {
-        id,
+        itemId,
         title,
         author,
         category,
@@ -24,7 +24,7 @@ export const booksSlice = createSlice({
     removeBookFromList: (state, action) => {
       const bookId = action.payload;
       state.booksArr = state.booksArr.filter(
-        (book) => book.id !== bookId,
+        (book) => book.itemId !== bookId,
       );
     },
   },
