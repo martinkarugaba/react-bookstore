@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   categories: [],
@@ -6,11 +6,14 @@ const initialState = {
 };
 
 export const categoriesSlice = createSlice({
-  name: 'categories',
+  name: "categories",
   initialState,
   reducers: {
-    
-  }
+    setUnderConstruction: (state) => {
+      state.underConstruction = true;
+    },
+  },
 });
 
+export const { setUnderConstruction } = categoriesSlice.actions;
 export default categoriesSlice.reducer;
