@@ -7,13 +7,9 @@ const Booklist = () => {
   return (
     <div>
       {booksArr.map((book) => {
-        const { title, author } = book;
+        const { itemId, title, author } = book;
         return (
-          <SingleBook
-            key={book.id}
-            title={title}
-            author={author}
-          />
+          <SingleBook key={itemId} title={title} author={author} />
         );
       })}
     </div>

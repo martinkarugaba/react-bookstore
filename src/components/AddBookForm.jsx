@@ -1,11 +1,22 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addBookToList } from '../redux/books/booksSlice';
 
-const Addbook = () => {
+const AddBookForm = () => {
+  const dispatch = useDispatch();
+
   const [title, setBook] = useState('');
   const [author, setAuthor] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const book = {
+      id: Date.now(),
+      title,
+      author,
+      category: 'uncategorized',
+    };
+    dispatch(addBookToList(book));
   };
 
   return (
@@ -29,4 +40,4 @@ const Addbook = () => {
   );
 };
 
-export default Addbook;
+export default AddBookForm;
