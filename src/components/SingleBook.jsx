@@ -1,16 +1,18 @@
 import PropTypes from 'prop-types';
+import RemoveBookButton from './RemoveBookButton';
 
-const SingleBook = ({ title, author }) => (
+const SingleBook = ({ id, title, author }) => (
   <div>
     <p>{title}</p>
     <p>{author}</p>
-    <button type="button">delete</button>
+    <RemoveBookButton id={id} />
   </div>
 );
 
 export default SingleBook;
 
 SingleBook.propTypes = {
+  id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
 };

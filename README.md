@@ -106,7 +106,7 @@ Clone this repository to your desired folder:
 
 ```sh
   cd my-folder
-  git clone git@github.com:martinkarugaba/new-math-calculator.git
+  git clone git@github.com:martinkarugaba/react-bookstore.git
 ```
 --->
 
@@ -115,7 +115,7 @@ Clone this repository to your desired folder:
 Install this project with:
 
 ```sh
-  cd new-math-calculator
+  cd react-bookstore
   npm install
 ```
 
@@ -161,8 +161,8 @@ Example command:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[add_a_book]**
-- [ ] **[remove_a_book]**
+- [ ] **[Fetch_books_from_API]**
+- [ ] **[Add_styling_to_the_app]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

@@ -1,9 +1,9 @@
-import Addbook from '../components/Addbook';
+import AddBookForm from '../components/AddBookForm';
 import Booklist from '../components/Booklist';
 
 const Home = () => (
   <>
-    <Addbook />
+    <AddBookForm />
     <Booklist />
   </>
 );
