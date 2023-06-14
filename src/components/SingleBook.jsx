@@ -1,16 +1,13 @@
-import PropTypes from "prop-types";
-import RemoveBookButton from "./RemoveBookButton";
+import PropTypes from 'prop-types';
+import RemoveBookButton from './RemoveBookButton';
 
-const SingleBook = ({ id, title, author }) => {
-  const dispatch = useDispatch();
-  return (
-    <div>
-      <p>{title}</p>
-      <p>{author}</p>
-      <RemoveBookButton id={id} />
-    </div>
-  );
-};
+const SingleBook = ({ id, title, author }) => (
+  <div>
+    <p>{title}</p>
+    <p>{author}</p>
+    <RemoveBookButton id={id} />
+  </div>
+);
 
 export default SingleBook;
 

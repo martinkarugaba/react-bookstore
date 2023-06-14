@@ -1,8 +1,8 @@
-import PropTypes from "prop-types";
-import { useDispatch } from "react-redux";
-import { removeBookFromList } from "../redux/books/booksSlice";
+import { useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
+import { removeBookFromList } from '../redux/books/booksSlice';
 
-const RemoveBookButton = (id) => {
+const RemoveBookButton = ({ id }) => {
   const dispatch = useDispatch();
 
   return (
@@ -14,8 +14,9 @@ const RemoveBookButton = (id) => {
     </button>
   );
 };
-export default RemoveBookButton;
 
 RemoveBookButton.propTypes = {
   id: PropTypes.string.isRequired,
 };
+
+export default RemoveBookButton;
