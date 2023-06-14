@@ -42,6 +42,7 @@ After you're finished please remove all the comments and instructions!
     - [Usage](#usage)
     - [Run tests](#run-tests)
   - [👥 Authors ](#-authors-)
+  - [🔭 Future Features ](#-future-features-)
   - [🤝 Contributing ](#-contributing-)
   - [⭐️ Show your support ](#️-show-your-support-)
   - [🙏 Acknowledgments ](#-acknowledgments-)
@@ -142,7 +143,6 @@ Example command:
 ```
 --->
 
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- AUTHORS -->
@@ -158,6 +158,11 @@ Example command:
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
+
+## 🔭 Future Features <a name="future-features"></a>
+
+- [ ] **[add_a_book]**
+- [ ] **[remove_a_book]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -184,8 +189,6 @@ If you like this project, write tome via my email or via my social media handles
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
 I would like to thank Microverse for guiding me while buildin this project.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
