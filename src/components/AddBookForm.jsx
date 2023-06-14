@@ -29,7 +29,7 @@ const AddBookForm = () => {
           value={title}
           required
           onChange={(e) => setTitle(e.target.value)}
-          placeholder="Add book"
+          placeholder="Title"
         />
         <input
           type="text"
