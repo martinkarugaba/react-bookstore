@@ -1,18 +1,16 @@
-import { useState } from 'react';
-import books from '../data/books';
+import { useSelector } from 'react-redux';
 import SingleBook from './SingleBook';
 
 const Booklist = () => {
-  const [booklist, setBookList] = useState(books);
+  const { booksArr } = useSelector((store) => store.books);
 
   return (
     <div>
-      {booklist.map((book) => {
+      {booksArr.map((book) => {
         const { title, author } = book;
         return (
           <SingleBook
             key={book.id}
-            setBookList={setBookList}
             title={title}
             author={author}
           />
