@@ -4,6 +4,7 @@ import axios from 'axios';
 const appId = process.env.REACT_APP_BOOKSTORE_APP_ID;
 const getBooksUrl = `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/${appId}/books`;
 const createBookUrl = `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/${appId}/books`;
+const deleteBookUrl = `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/${appId}/books/item1`;
 
 const initialState = {
   books: [],
