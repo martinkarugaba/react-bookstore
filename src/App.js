@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import {
   createBrowserRouter,
   Route,
@@ -7,6 +9,7 @@ import {
 import Home from './pages/Home';
 import Categories from './pages/Categories';
 import RootLayout from './layouts/RootLayout';
+import { fetchBooks } from './redux/books/booksSlice';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -17,6 +20,12 @@ const router = createBrowserRouter(
   ),
 );
 
-const App = () => <RouterProvider router={router} />;
+const App = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchBooks());
+  }, []);
 
+  return <RouterProvider router={router} />;
+};
 export default App;

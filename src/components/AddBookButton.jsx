@@ -7,14 +7,15 @@ const AddBookButton = ({
 }) => {
   const dispatch = useDispatch();
 
+  const book = {
+    item_id: String(Date.now()),
+    title,
+    author,
+    category: 'uncategorized',
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    const book = {
-      itemId: String(Date.now()),
-      title,
-      author,
-      category: 'uncategorized',
-    };
     dispatch(addBookToList(book));
     setTitle('');
     setAuthor('');

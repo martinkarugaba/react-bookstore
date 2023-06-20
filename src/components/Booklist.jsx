@@ -1,23 +1,26 @@
-import { useSelector } from 'react-redux';
-import SingleBook from './SingleBook';
-
-const Booklist = () => {
-  const { booksArr } = useSelector((store) => store.books);
-
-  return (
-    <div>
-      {booksArr.map((book) => {
-        const { itemId, title, author } = book;
-        return (
-          <SingleBook
-            key={itemId}
-            title={title}
-            author={author}
-            id={itemId}
-          />
-        );
-      })}
-    </div>
-  );
-};
+const Booklist = () => <div>Booklist</div>;
 export default Booklist;
+
+// import { useSelector } from 'react-redux';
+// import SingleBook from './SingleBook';
+
+// const Booklist = () => {
+//  const { booksArr } = useSelector((store) => store.books);
+
+//  return (
+//    <div>
+//      {booksArr.map((book) => {
+//        const { itemId, title, author } = book;
+//        return (
+//          <SingleBook
+//            key={itemId}
+//            title={title}
+//            author={author}
+//            id={itemId}
+//          />
+//        );
+//      })}
+//    </div>
+//  );
+// };
+// export default Booklist;
