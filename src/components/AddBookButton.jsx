@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { addBookToList } from '../redux/books/booksSlice';
+import { addBook, fetchBooks } from '../redux/books/booksSlice';
 
 const AddBookButton = ({
   title, author, setTitle, setAuthor,
@@ -16,7 +16,8 @@ const AddBookButton = ({
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(addBookToList(book));
+    dispatch(addBook(book));
+    dispatch(fetchBooks());
     setTitle('');
     setAuthor('');
   };

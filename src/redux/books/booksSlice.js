@@ -4,13 +4,20 @@ import axios from 'axios';
 const appId = process.env.REACT_APP_BOOKSTORE_APP_ID;
 const getBooksUrl = `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/${appId}/books`;
 const createBookUrl = `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/${appId}/books`;
-const deleteBookUrl = `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/${appId}/books/item1`;
 
 const initialState = {
   books: [],
   isLoading: true,
   isError: false,
 };
+
+export const fetchBooks = createAsyncThunk(
+  'books/fetchBooks',
+  async () => {
+    const response = await axios.get(getBooksUrl);
+    return response.data;
+  },
+);
 
 const postBook = async (book) => {
   try {
@@ -22,53 +29,52 @@ const postBook = async (book) => {
     console.log(response.data);
     return response.data;
   } catch (error) {
+    console.error(error);
     return error;
   }
 };
 
-export const fetchBooks = createAsyncThunk(
-  'books/fetchBooks',
-  async () => {
-    try {
-      const response = await axios.get(getBooksUrl);
-      return response.data;
-    } catch (error) {
-      console.log(error);
-      throw error;
-    }
-  },
-);
+export const deleteBookFromAPI = async (id) => {
+  const deleteBookUrl = `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/${appId}/books/${id}`;
+  try {
+    const response = await axios.delete(deleteBookUrl);
+    return response.data;
+  } catch (error) {
+    return error;
+  }
+};
 
 export const booksSlice = createSlice({
   name: 'books',
   initialState,
   reducers: {
-    addBookToList: (state, action) => {
+    addBook: (state, action) => {
       postBook(action.payload);
     },
-    removeBookFromList: (state, action) => {
+    deleteBook: (state, action) => {
       const bookId = action.payload;
-      state.books = state.books.filter(
-        (book) => book.itemId !== bookId,
-      );
+      deleteBookFromAPI(bookId);
     },
   },
   extraReducers: (builder) => {
     builder
       .addCase(fetchBooks.pending, (state) => {
         state.isLoading = true;
+        console.log('pending');
       })
       .addCase(fetchBooks.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isError = false;
         state.books = action.payload;
+        console.log('fulfilled');
       })
       .addCase(fetchBooks.rejected, (state) => {
         state.isLoading = false;
         state.isError = true;
+        console.log('rejected');
       });
   },
 });
 
-export const { addBookToList, removeBookFromList } = booksSlice.actions;
+export const { addBook, deleteBook } = booksSlice.actions;
 export default booksSlice.reducer;

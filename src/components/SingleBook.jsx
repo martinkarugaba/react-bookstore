@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import RemoveBookButton from './RemoveBookButton';
+import RemoveBookButton from './DeleteBookButton';
 
 const SingleBook = ({ id, title, category }) => (
   <div>
