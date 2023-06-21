@@ -3,7 +3,12 @@ import { useDispatch } from 'react-redux';
 import { addBook, fetchBooks } from '../redux/books/booksSlice';
 
 const AddBookButton = ({
-  title, author, setTitle, setAuthor,
+  title,
+  author,
+  setTitle,
+  setAuthor,
+  category,
+  setCategory,
 }) => {
   const dispatch = useDispatch();
 
@@ -11,7 +16,7 @@ const AddBookButton = ({
     item_id: String(Date.now()),
     title,
     author,
-    category: 'uncategorized',
+    category,
   };
 
   const handleSubmit = (e) => {
@@ -20,6 +25,7 @@ const AddBookButton = ({
     dispatch(fetchBooks());
     setTitle('');
     setAuthor('');
+    setCategory('');
   };
 
   return (
@@ -32,8 +38,10 @@ const AddBookButton = ({
 AddBookButton.propTypes = {
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
   setTitle: PropTypes.func.isRequired,
   setAuthor: PropTypes.func.isRequired,
+  setCategory: PropTypes.func.isRequired,
 };
 
 export default AddBookButton;
