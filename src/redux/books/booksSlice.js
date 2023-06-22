@@ -19,41 +19,52 @@ export const fetchBooks = createAsyncThunk(
   },
 );
 
-const postBook = async (book) => {
-  try {
-    const response = await axios.post(createBookUrl, book, {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-    console.log(response.data);
-    return response.data;
-  } catch (error) {
-    console.error(error);
-    return error;
-  }
-};
+export const createBook = createAsyncThunk(
+  'books/createBook', async (book, thunkAPI) => {
+    try {
+      const response = await axios.post(createBookUrl, book, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      if (response.status === 201) {
+        thunkAPI.dispatch(fetchBooks());
+        return null;
+      }
+      return response.data;
+    } catch (error) {
+      console.error(error);
+      return error;
+    }
+  },
+);
 
-export const deleteBookFromAPI = async (id) => {
-  const deleteBookUrl = `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/${appId}/books/${id}`;
-  try {
-    const response = await axios.delete(deleteBookUrl);
-    return response.data;
-  } catch (error) {
-    return error;
-  }
-};
+export const deleteBook = createAsyncThunk(
+  'books/deleteBook', async (id, thunkAPI) => {
+    const deleteBookUrl = `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/${appId}/books/${id}`;
+    try {
+      const response = await axios.delete(deleteBookUrl);
+      if (response.status === 201) {
+        thunkAPI.dispatch(fetchBooks());
+        return null;
+      }
+      return response.data;
+    } catch (error) {
+      return error;
+    }
+  },
+);
 
 export const booksSlice = createSlice({
   name: 'books',
   initialState,
   reducers: {
     addBook: (state, action) => {
-      postBook(action.payload);
+      createBook(action.payload);
     },
-    deleteBook: (state, action) => {
+    removeBook: (state, action) => {
       const bookId = action.payload;
-      deleteBookFromAPI(bookId);
+      deleteBook(bookId);
     },
   },
   extraReducers: (builder) => {
@@ -76,5 +87,5 @@ export const booksSlice = createSlice({
   },
 });
 
-export const { addBook, deleteBook } = booksSlice.actions;
+export const { addBook, removeBook } = booksSlice.actions;
 export default booksSlice.reducer;
