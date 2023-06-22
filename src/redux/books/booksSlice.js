@@ -33,7 +33,6 @@ export const createBook = createAsyncThunk(
       }
       return response.data;
     } catch (error) {
-      console.error(error);
       return error;
     }
   },
@@ -71,18 +70,15 @@ export const booksSlice = createSlice({
     builder
       .addCase(fetchBooks.pending, (state) => {
         state.isLoading = true;
-        console.log('pending');
       })
       .addCase(fetchBooks.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isError = false;
         state.books = action.payload;
-        console.log('fulfilled');
       })
       .addCase(fetchBooks.rejected, (state) => {
         state.isLoading = false;
         state.isError = true;
-        console.log('rejected');
       });
   },
 });

@@ -24,7 +24,7 @@ const App = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchBooks());
-  }, []);
+  }, [dispatch]);
 
   return <RouterProvider router={router} />;
 };
