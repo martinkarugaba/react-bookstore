@@ -4,6 +4,7 @@ import AddBookButton from './AddBookButton';
 const AddBookForm = () => {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
+  const [category, setCategory] = useState('');
 
   return (
     <>
@@ -22,10 +23,19 @@ const AddBookForm = () => {
           onChange={(e) => setAuthor(e.target.value)}
           placeholder="Author"
         />
+        <input
+          type="text"
+          value={category}
+          required
+          onChange={(e) => setCategory(e.target.value)}
+          placeholder="Category"
+        />
         <AddBookButton
           author={author}
           title={title}
+          category={category}
           setAuthor={setAuthor}
+          setCategory={setCategory}
           setTitle={setTitle}
         />
       </form>

@@ -161,8 +161,7 @@ Example command:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[Fetch_books_from_API]**
-- [ ] **[Add_styling_to_the_app]**
+- [ ] **[Add_Styling_to_match_the_design]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

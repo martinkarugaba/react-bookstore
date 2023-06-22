@@ -1,23 +1,30 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { addBookToList } from '../redux/books/booksSlice';
+import { createBook } from '../redux/books/booksSlice';
 
 const AddBookButton = ({
-  title, author, setTitle, setAuthor,
+  title,
+  author,
+  setTitle,
+  setAuthor,
+  category,
+  setCategory,
 }) => {
   const dispatch = useDispatch();
 
+  const book = {
+    item_id: String(Date.now()),
+    title,
+    author,
+    category,
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    const book = {
-      itemId: String(Date.now()),
-      title,
-      author,
-      category: 'uncategorized',
-    };
-    dispatch(addBookToList(book));
+    dispatch(createBook(book));
     setTitle('');
     setAuthor('');
+    setCategory('');
   };
 
   return (
@@ -30,8 +37,10 @@ const AddBookButton = ({
 AddBookButton.propTypes = {
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
   setTitle: PropTypes.func.isRequired,
   setAuthor: PropTypes.func.isRequired,
+  setCategory: PropTypes.func.isRequired,
 };
 
 export default AddBookButton;

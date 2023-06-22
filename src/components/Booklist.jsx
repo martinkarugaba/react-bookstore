@@ -2,21 +2,19 @@ import { useSelector } from 'react-redux';
 import SingleBook from './SingleBook';
 
 const Booklist = () => {
-  const { booksArr } = useSelector((store) => store.books);
+  const { books } = useSelector((store) => store.books);
 
   return (
     <div>
-      {booksArr.map((book) => {
-        const { itemId, title, author } = book;
-        return (
-          <SingleBook
-            key={itemId}
-            title={title}
-            author={author}
-            id={itemId}
-          />
-        );
-      })}
+      {Object.entries(books).map(([key, bookItems]) => bookItems.map((book) => (
+
+        <SingleBook
+          key={key}
+          id={key}
+          title={book.title}
+          category={book.category}
+        />
+      )))}
     </div>
   );
 };
