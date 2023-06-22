@@ -82,8 +82,26 @@ export const booksSlice = createSlice({
         state.isLoading = false;
         state.isError = true;
       })
+      // createBook
+      .addCase(createBook.pending, (state) => {
+        state.isError = false;
+      })
+      .addCase(createBook.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.isError = false;
+        state.books = action.payload;
+      })
       .addCase(createBook.rejected, (state) => {
         state.isError = true;
+      })
+      // deleteBook
+      .addCase(deleteBook.pending, (state) => {
+        state.isError = true;
+      })
+      .addCase(deleteBook.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.isError = false;
+        state.books = action.payload;
       })
       .addCase(deleteBook.rejected, (state) => {
         state.isError = true;
