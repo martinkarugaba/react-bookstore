@@ -7,7 +7,7 @@ const createBookUrl = `https://us-central1-bookstore-api-e63c8.cloudfunctions.ne
 
 const initialState = {
   books: [],
-  isLoading: true,
+  isLoading: false,
   isError: false,
 };
 
@@ -16,7 +16,7 @@ export const fetchBooks = createAsyncThunk(
   async () => {
     const response = await axios.get(getBooksUrl);
     return response.data;
-  }
+  },
 );
 
 export const createBook = createAsyncThunk(
@@ -36,7 +36,7 @@ export const createBook = createAsyncThunk(
     } catch (error) {
       return thunkAPI.rejectWithValue('Something went wrong');
     }
-  }
+  },
 );
 
 export const deleteBook = createAsyncThunk(
@@ -53,7 +53,7 @@ export const deleteBook = createAsyncThunk(
     } catch (error) {
       return thunkAPI.rejectWithValue('Something went wrong');
     }
-  }
+  },
 );
 
 export const booksSlice = createSlice({
@@ -82,26 +82,8 @@ export const booksSlice = createSlice({
         state.isLoading = false;
         state.isError = true;
       })
-      // createBook
-      .addCase(createBook.pending, (state) => {
-        state.isError = false;
-      })
-      .addCase(createBook.fulfilled, (state, action) => {
-        state.isLoading = false;
-        state.isError = false;
-        state.books = action.payload;
-      })
       .addCase(createBook.rejected, (state) => {
         state.isError = true;
-      })
-      // deleteBook
-      .addCase(deleteBook.pending, (state) => {
-        state.isError = true;
-      })
-      .addCase(deleteBook.fulfilled, (state, action) => {
-        state.isLoading = false;
-        state.isError = false;
-        state.books = action.payload;
       })
       .addCase(deleteBook.rejected, (state) => {
         state.isError = true;
