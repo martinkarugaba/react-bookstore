@@ -6,6 +6,12 @@ module.exports = {
       colors: {
         'pale-grey': '#f5f6fa',
         'off-white': '#fafafa',
+        'primary-blue': '#0290ff',
+        'text-color':'#121212',
+      },
+      fontFamily: {
+        montserat: ['Montserrat', 'sans-serif'],
+        'roboto-slab': ['Roboto Slab', 'serif'],
       },
     },
   },

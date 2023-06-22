@@ -3,8 +3,8 @@ import Booklist from '../components/Booklist';
 
 const Home = () => (
   <div className="border-2">
-    <AddBookForm />
     <Booklist />
+    <AddBookForm />
   </div>
 );
 export default Home;
