@@ -11,7 +11,7 @@ const SingleBook = ({ id, title, category }) => (
     </div>
 
     <div className="box border relative w-[300px] h-[400px] flex justify-center items-center">
-      <div className="percent w-[150px] h-[150px] relative">
+      <div className="percent w-[150px] h-[150px] relative rotate-[270deg]">
         <svg className="w-[150px] h-[150px] relative">
           <circle
             className="w-[150px] h-[150px] fill-none stroke-[10] stroke-primary-blue translate-y-[5px] translate-x-[5px]"
@@ -26,12 +26,6 @@ const SingleBook = ({ id, title, category }) => (
             r="70"
           />
         </svg>
-        <div className="number">
-          <h2>
-            87
-            <span>%</span>
-          </h2>
-        </div>
       </div>
     </div>
 
