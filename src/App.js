@@ -26,6 +26,10 @@ const App = () => {
     dispatch(fetchBooks());
   }, [dispatch]);
 
-  return <RouterProvider router={router} />;
+  return (
+    <div className="bg-pale-grey py-[9.313rem] px-[6.25rem]">
+      <RouterProvider router={router} />
+    </div>
+  );
 };
 export default App;

@@ -1,0 +1,14 @@
+circle {
+  stroke-dasharray: 190;
+  stroke-dashoffset: 190;
+}
+
+circle:nth-child(1) {
+  stroke-dashoffset: 0;
+  stroke: #f3f3f3;
+}
+
+circle:nth-child(2) {
+  stroke-dashoffset: calc(190 - (190 * 67) / 100);
+  stroke: #0290ff;
+}

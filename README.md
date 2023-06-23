@@ -19,7 +19,7 @@ REQUIRED SECTIONS:
 - Acknowledgements
 - License
 
-OPTIONAL SECTIONS:
+OPTIONAL SECTIONS:****
 - FAQ
 
 After you're finished please remove all the comments and instructions!
@@ -69,7 +69,7 @@ After you're finished please remove all the comments and instructions!
 
 ### Key Features <a name="key-features"></a>
 
-- **[Add_a_book]**
+- **[Add_a_book_plus_its_category]**
 - **[Delete_a_book]**
 
 
@@ -161,7 +161,7 @@ Example command:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[Add_Styling_to_match_the_design]**
+- [ ] **[Add_author_and_dynamic_percentage]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

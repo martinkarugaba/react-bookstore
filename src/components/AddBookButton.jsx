@@ -28,8 +28,8 @@ const AddBookButton = ({
   };
 
   return (
-    <button type="submit" onClick={handleSubmit}>
-      Submit
+    <button type="submit" className="text-sm rounded-sm w-[11.5rem] font-bold text-white bg-primary-blue py-[0.61rem] px-10 font-roboto-slab uppercase" onClick={handleSubmit}>
+      add book
     </button>
   );
 };

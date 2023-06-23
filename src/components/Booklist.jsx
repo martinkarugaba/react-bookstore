@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import SingleBook from './SingleBook';
+import SingleBook from './singlebook/SingleBook';
 
 const Booklist = () => {
   const { books } = useSelector((store) => store.books);
