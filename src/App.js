@@ -27,7 +27,7 @@ const App = () => {
   }, [dispatch]);
 
   return (
-    <div className="border border-rose-700 bg-pale-grey py-[9.313rem] px-[6.25rem]">
+    <div className="bg-pale-grey py-[9.313rem] px-[6.25rem]">
       <RouterProvider router={router} />
     </div>
   );
