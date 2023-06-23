@@ -1,6 +1,6 @@
 circle {
-  stroke-dasharray: 250;
-  stroke-dashoffset: 250;
+  stroke-dasharray: 190;
+  stroke-dashoffset: 190;
 }
 
 circle:nth-child(1) {
@@ -9,6 +9,6 @@ circle:nth-child(1) {
 }
 
 circle:nth-child(2) {
-  stroke-dashoffset: calc(250 - (250 * 75) / 100);
+  stroke-dashoffset: calc(190 - (190 * 67) / 100);
   stroke: #0290ff;
 }
