@@ -15,7 +15,7 @@ const AddBookForm = () => {
         <input
           type="text"
           value={title}
-          className="border w-[500px] py-2 px-2"
+          className="border w-[410px] py-2 px-2"
           required
           onChange={(e) => setTitle(e.target.value)}
           placeholder="Book title"
@@ -28,12 +28,24 @@ const AddBookForm = () => {
           <option value="" disabled selected>
             Category
           </option>
-          <option value="fiction">Fiction</option>
-          <option value="religion">Religion</option>
-          <option value="romance">Romance</option>
-          <option value="non-fiction">Non-fiction</option>
-          <option value="poetry">Poetry</option>
-          <option value="crime">Crime</option>
+          <option className="px-2 py-[0.2rem] text-text-color" value="Fiction">
+            Fiction
+          </option>
+          <option className="px-2 py-[0.2rem] text-text-color" value="Religion">
+            Religion
+          </option>
+          <option className="px-2 py-[0.2rem] text-text-color" value="Romance">
+            Romance
+          </option>
+          <option className="px-2 py-[0.2rem] text-text-color" value="Non-fiction">
+            Non-fiction
+          </option>
+          <option className="px-2 py-[0.2rem] text-text-color" value="Noetry">
+            Poetry
+          </option>
+          <option className="px-2 py-[0.2rem] text-text-color" value="Crime">
+            Crime
+          </option>
         </select>
         <AddBookButton
           author={author}
