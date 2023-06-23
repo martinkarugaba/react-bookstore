@@ -8,7 +8,7 @@ const AddBookForm = () => {
 
   return (
     <>
-      <form>
+      <form className="border-2">
         <input
           type="text"
           value={title}

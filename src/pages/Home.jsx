@@ -2,7 +2,7 @@ import AddBookForm from '../components/AddBookForm';
 import Booklist from '../components/Booklist';
 
 const Home = () => (
-  <div className="border-2">
+  <div className="border px-[6.25rem] pt-[2.375rem]">
     <Booklist />
     <AddBookForm />
   </div>

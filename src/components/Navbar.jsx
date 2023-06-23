@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import profile from '../assets/profile.png';
 
 const Navbar = () => (
-  <div className="border-2 px-[6.25rem] py-[1.813rem] flex justify-between items-center">
+  <div className="border-b shadow px-[6.25rem] py-[1.813rem] flex justify-between items-center">
     <div className="flex justify-start items-center gap-x-[3rem]">
       <h1 className="text-[1.875rem] font-montserat font-bold text-primary-blue">
         Bookstore CMS
@@ -10,7 +10,7 @@ const Navbar = () => (
       <nav className="flex justify-start items-center uppercase text-[0.813rem] gap-x-[2.563rem] font-montserat tracking-[1.9px]">
         <div className="cursor-pointer">
           <NavLink
-            className="text-text-color active:font-semibold"
+            className="text-text-color font-light active:font-semibold"
             to="/"
           >
             Home
@@ -18,7 +18,7 @@ const Navbar = () => (
         </div>
         <div className="cursor-pointer">
           <NavLink
-            className="text-text-color active:font-semibold"
+            className="text-text-color font-light active:font-semibold"
             to="categories"
           >
             Categories

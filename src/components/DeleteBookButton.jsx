@@ -12,7 +12,7 @@ const DeleteBookButton = ({ id }) => {
 
   return (
     <button type="button" onClick={handleDelete}>
-      delete
+      remove
     </button>
   );
 };
