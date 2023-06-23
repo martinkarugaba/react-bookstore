@@ -7,29 +7,34 @@ const AddBookForm = () => {
   const [category, setCategory] = useState('');
 
   return (
-    <>
-      <form className="border-2">
+    <div className="py-[1.813rem]">
+      <h2 className="uppercase font-montserat font-bold text-gray-400">
+        add new book
+      </h2>
+      <form className="shadow text-base mt-[1.188rem] font-montserat font-light flex justify-between items-center">
         <input
           type="text"
           value={title}
+          className="border w-[500px] py-2 px-2"
           required
           onChange={(e) => setTitle(e.target.value)}
-          placeholder="Title"
+          placeholder="Book title"
         />
-        <input
-          type="text"
-          value={author}
-          required
-          onChange={(e) => setAuthor(e.target.value)}
-          placeholder="Author"
-        />
-        <input
-          type="text"
+        <select
+          className="border text-gray-400 w-[250px] h-[100%] py-2 px-2 bg-white"
           value={category}
-          required
           onChange={(e) => setCategory(e.target.value)}
-          placeholder="Category"
-        />
+        >
+          <option value="" disabled selected>
+            Category
+          </option>
+          <option value="fiction">Fiction</option>
+          <option value="religion">Religion</option>
+          <option value="romance">Romance</option>
+          <option value="non-fiction">Non-fiction</option>
+          <option value="poetry">Poetry</option>
+          <option value="crime">Crime</option>
+        </select>
         <AddBookButton
           author={author}
           title={title}
@@ -39,7 +44,7 @@ const AddBookForm = () => {
           setTitle={setTitle}
         />
       </form>
-    </>
+    </div>
   );
 };
 

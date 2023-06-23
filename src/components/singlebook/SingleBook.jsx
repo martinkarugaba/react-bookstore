@@ -3,11 +3,11 @@ import Circle from './Circle';
 import FirstSection from './FirstSection';
 
 const SingleBook = ({ id, title, category }) => (
-  <section className="shadow flex justify-between items-center py-[1.75rem] pl-[1.688rem] pr-[5.188rem]">
+  <section className="shadow flex justify-between items-center py-[1.75rem] pl-[1.688rem] pr-[5.188rem] mb-[0.938rem]">
     <FirstSection id={id} title={title} category={category} />
     <section className="flex justify-end items-center">
       {/* progress */}
-      <div className="flex justify-between w-auto items-center pr-[4.938rem]">
+      <div className="flex justify-between w-auto items-center pr-[2.938rem]">
         <Circle />
         <div className="flex flex-col justify-center items-start">
           <h3 className="font-montserat text-text-color text-[2rem] font-normal -mb-[0.7rem]">
@@ -20,10 +20,10 @@ const SingleBook = ({ id, title, category }) => (
       </div>
       {/* book info */}
       <div className="pl-[3.688rem] border-l">
-        <h3 className="text-light-gray uppercase text-small font-roboto-slab">
+        <h3 className="text-gray-400 uppercase text-small font-roboto-slab">
           Current Chapter
         </h3>
-        <p className="text-text-color font-light text-base mt-[0.438rem]">
+        <p className="text-text-color text-small font-light font-roboto-slab">
           Chapter 3: Lessons learned
         </p>
         <button
