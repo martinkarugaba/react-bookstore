@@ -11,8 +11,12 @@ const DeleteBookButton = ({ id }) => {
   };
 
   return (
-    <button type="button" onClick={handleDelete}>
-      remove
+    <button
+      type="button"
+      className="pl-[1.063rem] pr-[0.938rem]"
+      onClick={handleDelete}
+    >
+      Remove
     </button>
   );
 };
